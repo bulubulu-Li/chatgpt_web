@@ -26,14 +26,14 @@ with open("config.yaml", "r", encoding="utf-8") as f:
 if os.getenv("DEPLOY_ON_RAILWAY") is not None:  # 如果是在Railway上部署，需要删除代理
     os.environ.pop('HTTPS_PROXY', None)
 
-API_KEY = os.getenv("OPENAI_API_KEY")  # 如果环境变量中设置了OPENAI_API_KEY，则使用环境变量中的OPENAI_API_KEY
+API_KEY = os.getenv("OPENAI_API_KEY"g)  # 如果环境变量中设置了OPENAI_API_KEY，则使用环境变量中的OPENAI_API_KEY
 PORT = os.getenv("PORT", default=PORT)  # 如果环境变量中设置了PORT，则使用环境变量中的PORT
 
 STREAM_FLAG = True  # 是否开启流式推送
 USER_DICT_FILE = "all_user_dict_v2.pkl"  # 用户信息存储文件（包含版本）
 lock = threading.Lock()  # 用于线程锁
 
-project_info = "## 智能客服demo    \n" \
+project_info = "## chatgpt    \n" \
                "发送`帮助`可获取帮助  \n"
 
 
